@@ -27,7 +27,6 @@ Plugin 'git://git.wincent.com/command-t.git'
 "
 
 "Plugin 'mattn/emmet-vim'
-Plugin 'scrooloose/nerdtree.git'
 "Plugin 'flazz/vim-colorschemes'
 
 " Ruby related
