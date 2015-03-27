@@ -89,7 +89,7 @@ alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
 alias gg='git log --graph --oneline --decorate'
-alias ga='git log --graph --oneline --decorate --all'
+alias gga='git log --graph --oneline --decorate --all'
 alias tma='tmux attach-session -t'
 alias tml='tmux list-sessions'
 
