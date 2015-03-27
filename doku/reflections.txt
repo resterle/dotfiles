@@ -1,0 +1,30 @@
+* Staging area
+  - Changes to be commited in the next commit.
+  - Add files with git add
+  - Add every change before commiting git commit -a
+
++-----------------------------------------------+
+|                                +------------+ |
+| working_dir -> staging_area -> | repository | |
+|             |              /   |------------| | 
+|         git add -> git commit  | <commit 2> | |  
+|              \     /           | <commit 1> | |  
+|                 +              | <commit 0> | |  
+|             git commit -a      +---------- -+ | 
++-----------------------------------------------+
+
+* Diff
+  - Diff <commit_id_0> with <commit_id_1> --> git diff commit_id_0 commit_id_1
+  - Diff working_dir with staging_area --> git diff
+  - Diff staging_area with most_recent_commit --> git diff --staged
+  - Diff with parent --> git show commit_id
+
+* Reset
+  - reset <commit_id(default: last commit)>
+  - option --hard Revert all changes from staging_area and working_dir
+  - option --soft Sets HEAD to commit_id and the current commit to the staging_area
+
+* Branch
+  - Command: git branch branch_name
+  - Adds a new 'label' branch_name to the current HEAD and moves it with the HEAD
+  - -d branch_name deletes branch_name
