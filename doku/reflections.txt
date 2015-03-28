@@ -3,14 +3,14 @@
   - Add files with git add
   - Add every change before commiting git commit -a
 
-+-----------------------------------------------+
-|                                +------------+ |
-| working_dir -> staging_area -> | repository | |
-|             |              /   |------------| | 
-|         git add -> git commit  | <commit 2> | |  
-|              \     /           | <commit 1> | |  
-|                 +              | <commit 0> | |  
-|             git commit -a      +---------- -+ | 
++-----------------------------------------------+                 REMOTE
+|                                +------------+ |              +------------+ 
+| working_dir -> staging_area -> | repository | |              | repository |
+|             |              /   |------------| |  ------->    |------------|
+|         git add -> git commit  | <commit 2> | |    push      | <commit 2> |
+|              \     /           | <commit 1> | |  <-------    | <commit 1> |
+|                 +              | <commit 0> | |    pull      | <commit 0> |
+|             git commit -a      +---------- -+ |              +---------- -+
 +-----------------------------------------------+
 
 * Diff
