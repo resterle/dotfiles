@@ -13,6 +13,8 @@
 |             git commit -a      +---------- -+ |            +---------- -+
 +-----------------------------------------------+
 
+(*) git fetch + git merge
+
 * Diff
   - Diff <commit_id_0> with <commit_id_1> --> git diff commit_id_0 commit_id_1
   - Diff working_dir with staging_area --> git diff
