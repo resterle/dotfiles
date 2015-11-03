@@ -16,7 +16,6 @@ Plugin 'gmarik/Vundle.vim'
 " plugin from http://vim-scripts.org/vim/scripts.html
 "Plugin 'L9'
 " Git plugin not hosted on GitHub
-Plugin 'git://git.wincent.com/command-t.git'
 " git repos on your local machine (i.e. when working on your own plugin)
 "Plugin 'file:///home/gmarik/path/to/plugin'
 " The sparkup vim script is in a subdirectory of this repo called vim.
@@ -31,6 +30,7 @@ Plugin 'git://git.wincent.com/command-t.git'
 
 " Ruby related
 Plugin 'vim-ruby/vim-ruby'
+"Plugin 'wincent/command-t'
 Plugin 'tpope/vim-cucumber'
 Plugin 'skalnik/vim-vroom'
 Plugin 'tpope/vim-endwise'
@@ -96,7 +96,6 @@ Plugin 'honza/vim-snippets'
 Plugin 'matthewsimo/angular-vim-snippets'
 
 
-Plugin 'kshenoy/vim-signature'
 "Plugin 'vimez/vim-showmarks.git'
 Plugin 'tpope/vim-abolish.git'
 
