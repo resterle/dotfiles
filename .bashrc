@@ -120,6 +120,10 @@ fi
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
+# esp sdk
+export PATH=/home/raphael/Development/esp/esp-open-sdk/xtensa-lx106-elf/bin:$PATH
+
+
 # Enable tab completion
 source ~/git-completion.bash
 
@@ -137,3 +141,6 @@ export GIT_PS1_SHOWDIRTYSTATE=1
 # '\$(__git_ps1)' adds git-related stuff
 # '\W' adds the name of the current directory
 export PS1="$purple\u@\h $BIBlue\w $green\$(__git_ps1)\n $reset$ "
+
+# TI Stuff
+export PATH=$PATH:$HOME/sat/bin
