@@ -9,28 +9,9 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
 
-" The following are examples of different formats supported.
-" Keep Plugin commands between vundle#begin/end.
-" plugin on GitHub repo
-"Plugin 'tpope/vim-fugitive'
-" plugin from http://vim-scripts.org/vim/scripts.html
-"Plugin 'L9'
-" Git plugin not hosted on GitHub
-" git repos on your local machine (i.e. when working on your own plugin)
-"Plugin 'file:///home/gmarik/path/to/plugin'
-" The sparkup vim script is in a subdirectory of this repo called vim.
-" Pass the path to set the runtimepath properly.
-"Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
-" Avoid a name conflict with L9
-"Plugin 'user/L9', {'name': 'newL9'}
-"
+" Ruby testing
 
-"Plugin 'mattn/emmet-vim'
-"Plugin 'flazz/vim-colorschemes'
-
-" Ruby related
 Plugin 'vim-ruby/vim-ruby'
-"Plugin 'wincent/command-t'
 Plugin 'tpope/vim-cucumber'
 Plugin 'skalnik/vim-vroom'
 Plugin 'tpope/vim-endwise'
@@ -39,32 +20,17 @@ Plugin 'tpope/vim-endwise'
 " meine alten
 
 Plugin 'bling/vim-airline'
+Plugin 'tpope/vim-fugitive' " Git
 
-Plugin 'tpope/vim-fugitive'
-Plugin 'Lokaltog/vim-easymotion'
-Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
-Plugin 'tpope/vim-rails.git'
+" nedtree
 Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'scrooloose/nerdtree.git'
 Plugin 'nvie/vim-flake8.git'
-
-
-" supervisor
-Plugin 'thiderman/vim-supervisor'
 
 " Dockerfile
 Plugin 'ekalinin/Dockerfile.vim'
 
 Plugin 'tpope/vim-haml'
-Plugin 'vim-scripts/bash-support.vim.git'
-
-" test
-"Plugin 'me-vlad/python-syntax.vim.git'
-Plugin 'klen/python-mode.git'
-
-Plugin 'majutsushi/tagbar.git'
-Plugin 'vim-scripts/django.vim.git'
-Plugin 'mileszs/ack.vim.git'
 
 " cooperative vimming!
 "Plugin 'FredKSchott/CoVim'
@@ -80,14 +46,6 @@ Plugin 'L9'
 Plugin 'indentpython'
 Plugin 'taglist.vim'
 Plugin 'unicode.vim'
-
-"
-
-" Time Tracking
-""Plugin 'PAntoine/TimeKeeper.git'
-
-" Zen coding
-Plugin 'mattn/emmet-vim'
 
 " snipmate und besser...
 Plugin 'SirVer/ultisnips.git'
@@ -147,30 +105,9 @@ Plugin 'kien/rainbow_parentheses.vim'
 " sort imports (python)
 Plugin 'fisadev/vim-isort'
 
-" use Ag (silver searcher)
-Plugin 'rking/ag.vim'
-
-" Drag blocks around - braucht man sowas wirklich?
-"Plugin 'gavinbeatty/dragvisuals.vim'
-
 
 " JSON Syntax
 Plugin 'elzr/vim-json'
-
-" WAKA time: see https://wakatime.com/help/plugins/vim
-"Plugin 'wakatime/vim-wakatime'
-
-
-" Show installed plugins from within menu
-" Plugin 'mbadran/headlights'
-
-
-" ipython integration
-Plugin 'ivanov/vim-ipython'
-
-
-" Robot Framework
-Plugin 'mfukar/robotframework-vim.git'
 
 
 " pydoc
@@ -178,8 +115,6 @@ Plugin 'fs111/pydoc.vim.git'
 
 " vim markdown
 Plugin 'gabrielelana/vim-markdown'
-"Plugin 'godlygeek/tabular'
-"Plugin 'plasticboy/vim-markdown'
 
 Plugin 'editorconfig/editorconfig-vim'
 
@@ -189,38 +124,6 @@ Plugin 'editorconfig/editorconfig-vim'
 call vundle#end()            " required
 filetype on           " Enable filetype detection
 filetype plugin indent on    " required
-
-
-" To ignore plugin indent changes, instead use:
-"filetype plugin on
-"
-" Brief help
-" :PluginList       - lists configured plugins
-" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
-" :PluginSearch foo - searches for foo; append `!` to refresh local cache
-" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
-"
-" see :h vundle for more details or wiki for FAQ
-" Put your non-Plugin stuff after this line
-
-
-
-
-
-""" " Web {{{
-""" autocmd BufWinEnter *.html,*.htm setfiletype html
-""" autocmd BufWinEnter *.scss setfiletype scss
-""" autocmd BufWinEnter *.less setfiletype less
-""" autocmd BufWinEnter *.json,*jshintrc setfiletype javascript
-""" """" this disables matchit:
-""" """ autocmd FileType html setlocal filetype=jinja
-""" autocmd FileType css,scss,less set omnifunc=csscomplete#CompleteCSS
-""" autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
-""" "autocmd FileType html,jinja,liquid set omnifunc=htmlcomplete#CompleteTags
-""" autocmd FileType html,jinja,liquid,css,scss,less,javascript setlocal tabstop=2 softtabstop=2 shiftwidth=2
-""" autocmd FileType html,jinja,liquid runtime! macros/matchit.vim
-""" "autocmd BufWritePost *.scss,*.sass !compass compile ../ <afile> --force
-""" "}}}
 
 autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 autocmd FileType ruby,html,jinja,liquid,css,scss,less,javascript setlocal tabstop=2 softtabstop=2 shiftwidth=2
@@ -348,19 +251,6 @@ let g:pymode_lint_cwindow=0
 let g:pymode_doc=0
 let g:pymode_rope_complete_on_dot=0
 let g:pymode_rope=0
-
-" let g:pymod_run=1
-" let g:pymode_folding=1
-" let g:pymode_options=1
-" let g:pymode_syntax=1
-" let g:pymode_syntax_all=1
-" let g:pymode_syntax_slow_sync=1
-" let g:pymode_trim_whitespaces=0
-" let g:pymode_lint=0
-" let g:pymode_doc=0
-" let g:pymode_rope=0
-"
-
 
 
 " Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
