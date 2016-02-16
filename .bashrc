@@ -112,6 +112,10 @@ export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 export PATH="$PATH:$HOME/.npm-packages/bin" # npm
 export PATH="$PATH:/usr/local/go/bin"
 
+# esp sdk
+export PATH=/home/raphael/Development/esp/esp-open-sdk/xtensa-lx106-elf/bin:$PATH
+
+
 # Enable tab completion
 source ~/git-completion.bash
 
@@ -132,4 +136,3 @@ export GIT_PS1_SHOWDIRTYSTATE=1
 # '\W' adds the name of the current directory
 export PS1="$purple\u@\h $BIBlue\w $green\$(__git_ps1)\n $reset$ "
 
-[ -s "$HOME/.nvm/nvm.sh" ] && . "$HOME/.nvm/nvm.sh"  # This l ads nvm
