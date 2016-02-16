@@ -7,4 +7,4 @@ alias gga='git log --graph --oneline --decorate --all'
 alias gst='git status'
 alias tma='tmux attach-session -t'
 alias tml='tmux list-sessions'
-
+alias bat='upower -i /org/freedesktop/UPower/devices/battery_BAT0 | grep --color=never -E "percentage|state|to\ full"'

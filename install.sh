@@ -1,3 +1,5 @@
+sudo apt-get install -y gvim awesome-extra
+
 mv ~/.vimrc ~/.vimrc.bak
 ln -s $(pwd)/.vimrc ~/.vimrc
 mv ~/.bashrc ~/.bashrc.bak
