@@ -35,6 +35,12 @@ Plugin 'tpope/vim-cucumber'
 Plugin 'skalnik/vim-vroom'
 Plugin 'tpope/vim-endwise'
 
+" Java related
+Plugin 'tpope/vim-classpath'
+
+" Clojure related
+Plugin 'tpope/vim-fireplace'
+Plugin 'guns/vim-clojure-static'
 
 " meine alten
 

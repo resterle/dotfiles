@@ -84,16 +84,6 @@ if [ -x /usr/bin/dircolors ]; then
     alias egrep='egrep --color=auto'
 fi
 
-# some more ls aliases
-alias ll='ls -alF'
-alias la='ls -A'
-alias l='ls -CF'
-alias gg='git log --graph --oneline --decorate'
-alias gga='git log --graph --oneline --decorate --all'
-alias gst='git status'
-alias tma='tmux attach-session -t'
-alias tml='tmux list-sessions'
-
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
@@ -119,6 +109,8 @@ if ! shopt -oq posix; then
 fi
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+export PATH="$PATH:$HOME/.npm-packages/bin" # npm
+export PATH="$PATH:/usr/local/go/bin"
 
 # Enable tab completion
 source ~/git-completion.bash
@@ -130,6 +122,8 @@ purple="\[\033[0;35m\]"
 reset="\[\033[0m\]"
 BIBlue="\e[1;94m"
 
+source ~/.aliases
+
 # Change command prompt
 source ~/git-prompt.sh
 export GIT_PS1_SHOWDIRTYSTATE=1
@@ -137,3 +131,5 @@ export GIT_PS1_SHOWDIRTYSTATE=1
 # '\$(__git_ps1)' adds git-related stuff
 # '\W' adds the name of the current directory
 export PS1="$purple\u@\h $BIBlue\w $green\$(__git_ps1)\n $reset$ "
+
+[ -s "$HOME/.nvm/nvm.sh" ] && . "$HOME/.nvm/nvm.sh"  # This l ads nvm
