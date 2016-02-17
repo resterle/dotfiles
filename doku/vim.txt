@@ -1,0 +1,44 @@
+Vim commands
+
+== Navigation ==
+
+h   -> left
+j   -> down
+k   -> up
+l   -> right
+
+w   -> next word (beginning) 
+e   -> end of word / next word (end)
+b   -> beginning of word / previous word (beginning)
+
+0   -> beginning of line
+$   -> end of line
+
+G   -> end of document
+gg  -> start of document
+
+%   -> go to matching braces
+
+== Insert mode ==
+
+o   -> new line (below)
+O   -> new line (above)
+i   -> insert
+I   -> end of line
+a   -> append
+A   -> beginning of line
+c   -> change current curser until (w/e/b)
+d   -> delete            ""
+C   -> change curser to end of line
+D   -> delete         ""
+
+== copy paste ==
+
+y   -> yield (paste)
+yy  -> yield line
+dd  -> delete line
+
+== search ==
+
+/{word} -> search for word
+*   -> search for word under the cursor
