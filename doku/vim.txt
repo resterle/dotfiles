@@ -32,6 +32,8 @@ d   -> delete            ""
 C   -> change curser to end of line
 D   -> delete         ""
 
+c t {x} -> change until x
+
 == copy paste ==
 
 y   -> yield (paste)
