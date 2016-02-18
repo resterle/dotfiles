@@ -148,21 +148,31 @@ nmap ,c ]]
 nmap ;c [[
 nmap ,f ]f
 nmap ;f ]F
-map ä :ccl<cr>:bn<cr>
-map ö :ccl<cr>:bp<cr>
-map Ö :ccl<cr>:tabprev<cr>
-map Ä :ccl<cr>:tabnext<cr>
+map Ä :ccl<cr>:bn<cr>
+map Ö :ccl<cr>:bp<cr>
+map ö :ccl<cr>:tabprev<cr>
+map ä :ccl<cr>:tabnext<cr>
+map nt :ccl<cr>:tabnew<cr>
 "highlight OverLength ctermbg=red ctermfg=white guibg=#592929
 "match OverLength /\%110v.\+/
 "
 set colorcolumn=79
-""""set cursorline
+
+" Highlight current line
+set cursorline
+hi CursorLine term=bold cterm=bold guibg=Grey40
 
 " Paste in insert mode via ctrl-v
 imap <c-v> <c-o>"+P<esc>
 
 " Enter for exit insert mode
-imap <cr> <esc>
+inoremap <S-CR> <esc>
+
+" Disable arrow keys in insert mode
+inoremap <Left>  <NOP>
+inoremap <Right> <NOP>
+inoremap <Up>    <NOP>
+inoremap <Down>  <NOP>
 
 
 "xml formatieren
