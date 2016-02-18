@@ -161,6 +161,10 @@ set colorcolumn=79
 " Paste in insert mode via ctrl-v
 imap <c-v> <c-o>"+P<esc>
 
+" Enter for exit insert mode
+imap <cr> <esc>
+
+
 "xml formatieren
 nmap ,x :silent %!xmllint --format --recover - 2>/dev/null<cr>
 
