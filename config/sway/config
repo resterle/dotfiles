@@ -70,6 +70,8 @@ input "1:1:AT_Translated_Set_2_keyboard" {
 input type:touchpad {
     tap enabled
     natural_scroll disabled
+    pointer_accel 0.3
+    accel_profile adaptive
 }
 
 ### Key bindings
@@ -239,6 +241,10 @@ bar {
 bindcode 232 exec xbacklight -2
 bindcode 233 exec xbacklight +2
 
+bindsym $mod+m exec --no-startup-id 'makoctl dismiss'
+
+bindsym $mod+Shift+s exec --no-startup-id 'grim -g "$(slurp)" ~/Pictures/screenshot/$(date +%N).png'
+
 for_window [class="jetbrains-idea" title="win0"] floating enable
 for_window [app_id="pavucontrol"] floating enable
 for_window [app_id="gnome-system-monitor"] floating enable
@@ -247,5 +253,7 @@ for_window [app_id="com.nextcloud.desktopclient.nextcloud"] floating enable
 
 # Tag xwayland windows as such
 for_window [shell="xwayland"] title_format "%title x"
+
+exec --no-startup-id mako
 
 include /etc/sway/config.d/*

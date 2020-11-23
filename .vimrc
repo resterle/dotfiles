@@ -16,6 +16,7 @@ Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'scrooloose/nerdtree.git'
 Plugin 'vim-scripts/indentpython.vim'
 Plugin 'vim-syntastic/syntastic'
+Plugin 'Xuyuanp/nerdtree-git-plugin'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -34,6 +35,9 @@ filetype plugin indent on    " required
 
 nmap ,n :NERDTreeTabsToggle<CR>
 nmap ,f :NERDTreeFind<CR>
+let g:NERDTreeNodeDelimiter = "\u00a0"
+let g:NERDTreeDirArrowExpandable = '▸'
+let g:NERDTreeDirArrowCollapsible = '▾'
 
 " line numbers
 :set nu
