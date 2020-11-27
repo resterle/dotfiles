@@ -1,37 +1,25 @@
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
-
-" let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
+" Plugins with vim-plug
+call plug#begin('~/.vim/plugged')
 
 " Nerdtree
 " nedtree
-Plugin 'jistr/vim-nerdtree-tabs'
-Plugin 'scrooloose/nerdtree.git'
-Plugin 'vim-scripts/indentpython.vim'
-Plugin 'vim-syntastic/syntastic'
-Plugin 'Xuyuanp/nerdtree-git-plugin'
+Plug 'preservim/nerdtree'
+Plug 'jistr/vim-nerdtree-tabs'
+Plug 'vim-scripts/indentpython.vim'
+Plug 'vim-syntastic/syntastic'
+Plug 'Xuyuanp/nerdtree-git-plugin'
+
+" Scala
+Plug 'neoclide/coc.nvim'
 
 " All of your Plugins must be added before the following line
-call vundle#end()            " required
-filetype plugin indent on    " required
-" To ignore plugin indent changes, instead use:
-"filetype plugin on
-"
-" Brief help
-" :PluginList       - lists configured plugins
-" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
-" :PluginSearch foo - searches for foo; append `!` to refresh local cache
-" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
-"
-" see :h vundle for more details or wiki for FAQ
-" Put your non-Plugin stuff after this line
+" Initialize plugin system
+call plug#end()
+
+" ===========================================================
 
 nmap ,n :NERDTreeTabsToggle<CR>
 nmap ,f :NERDTreeFind<CR>
@@ -60,22 +48,26 @@ filetype on
 
 set encoding=utf-8
 
-" font
-if has("gui_running")
-  if has("gui_gtk3")
-    set guifont=Noto\ Mono\ for\ Powerline\ 12
-    """"set guifont=Source\ Code\ Pro\ Semi-Bold\ 10
-    "set linespace=-2
-    set guioptions-=T
-    set guioptions-=r
-    set guioptions-=m
+" scala config
+autocmd FileType json syntax match Comment +\/\/.\+$+
 
-    "set guifont=Inconsolata\ 12
-  elseif has("gui_win32")
-    set guifont=Consolas:h11:cANSI
-  else
-    set guifont=DejaVu\ Sans\ Mono\ 12
-    set guifont=Monaco:h12
-    set guifont=Menlo:h14
-  endif
-endif
+au BufRead,BufNewFile *.sbt,*.sc set filetype=scala
+
+" Use K to either doHover or show documentation in preview window
+nnoremap <silent> K :call <SID>show_documentation()<CR>
+
+" Notify coc.nvim that <enter> has been pressed.
+" " Currently used for the formatOnType feature.
+inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
+       \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+
+" Toggle panel with Tree Views
+ nnoremap <silent> <space>t :<C-u>CocCommand metals.tvp<CR>
+" Toggle Tree View 'metalsPackages'
+nnoremap <silent> <space>tp :<C-u>CocCommand metals.tvp metalsPackages<CR>
+" Toggle Tree View 'metalsCompile'
+nnoremap <silent> <space>tc :<C-u>CocCommand metals.tvp metalsCompile<CR>
+" Toggle Tree View 'metalsBuild'
+nnoremap <silent> <space>tb :<C-u>CocCommand metals.tvp metalsBuild<CR>
+" Reveal current current class (trait or object) in Tree View 'metalsPackages'
+nnoremap <silent> <space>tf :<C-u>CocCommand metals.revealInTreeView metalsPackages<CR>

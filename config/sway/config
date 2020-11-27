@@ -1,7 +1,3 @@
-# Default config for sway
-#
-# Copy this to ~/.config/sway/config and edit it to your liking.
-#
 # Read `man 5 sway` for a complete reference.
 
 ### Variables
@@ -18,13 +14,15 @@ set $term alacritty
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
-set $menu rofi -combi-modi window#drun#ssh -theme solarized -font "hack 10" -show combi | xargs swaymsg exec --
-set $passmenu /home/raphael/apps/passmenu-rofi-wayland
+set $menu rofi -combi-modi window#drun#ssh -theme Arc-Dark -font "roboto mono for powerline 14" -show combi | xargs swaymsg exec --
+set $passmenu $HOME/.config/sway/scripts/passmenu-rofi-wayland
+
+set $lock_screen swaylock -f -c 000000
 
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg /usr/share/backgrounds/look.jpg fill
+output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
 
 default_border pixel
 
@@ -85,7 +83,7 @@ input type:touchpad {
     bindsym $mod+Shift+q kill
 
     # Start your launcher
-    bindsym $mod+d exec $menu
+    bindsym $mod+p exec $menu
 
     # launch pass
     bindsym $mod+Shift+P exec $passmenu
@@ -229,6 +227,16 @@ mode "resize" {
 }
 bindsym $mod+r mode "resize"
 
+mode "exit" {
+    bindsym l exec $lock_screen && swaymsg mode "default"
+    bindsym s exec $lock_screen && swaymsg mode "default" && systemctl suspend
+
+    # Return to default mode
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+bindsym $mod+q mode "exit"
+
 #
 # Status Bar:
 #
@@ -255,5 +263,6 @@ for_window [app_id="com.nextcloud.desktopclient.nextcloud"] floating enable
 for_window [shell="xwayland"] title_format "%title x"
 
 exec --no-startup-id mako
+exec redshift-gtk
 
 include /etc/sway/config.d/*

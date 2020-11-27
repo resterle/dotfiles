@@ -3,7 +3,7 @@
     "position": "top", // Waybar position (top|bottom|left|right)
     "height": 32, // Waybar height (to be removed for auto height)
     // Choose the order of the modules
-    "modules-left": ["sway/workspaces"],
+    "modules-left": ["sway/workspaces", "sway/mode"],
     "modules-center": ["clock"],
     "modules-right": ["battery", "pulseaudio", "network", "tray"],
     // Modules configuration
@@ -22,7 +22,22 @@
              "urgent": " ",
              "focused": " ",
              "default": " "
+         },
+         "persistent_workspaces": {
+            "1": [],
+            "2": [],
+            "3": [],
+            "4": [],
+            "5": [],
+            "6": [],
+            "7": [],
+            "8": [],
+            "9": [],
+            "10": []
          }
+     },
+     "sway/mode": {
+        "tooltip": false
      },
     "clock": {
         "interval": 5,

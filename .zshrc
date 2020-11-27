@@ -117,8 +117,8 @@ KUBE_PS1_CLUSTER_FUNCTION=get_cluster_short
 
 PROMPT=$PROMPT
 
-TERMINAL=xfce4-terminal
+TERMINAL=alacritty
 
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="/home/raphael/.sdkman"
-[[ -s "/home/raphael/.sdkman/bin/sdkman-init.sh" ]] && source "/home/raphael/.sdkman/bin/sdkman-init.sh"
+# asdf runtime management
+. $HOME/apps/asdf/asdf.sh
+. ~/.asdf/plugins/java/set-java-home.zsh
