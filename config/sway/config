@@ -230,6 +230,7 @@ bindsym $mod+r mode "resize"
 mode "exit" {
     bindsym l exec $lock_screen && swaymsg mode "default"
     bindsym s exec $lock_screen && swaymsg mode "default" && systemctl suspend
+    bindsym h exec $lock_screen && swaymsg mode "default" && systemctl hibernate
 
     # Return to default mode
     bindsym Return mode "default"
@@ -263,6 +264,5 @@ for_window [app_id="com.nextcloud.desktopclient.nextcloud"] floating enable
 for_window [shell="xwayland"] title_format "%title x"
 
 exec --no-startup-id mako
-exec redshift-gtk
 
 include /etc/sway/config.d/*

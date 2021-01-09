@@ -23,6 +23,7 @@ call plug#end()
 
 nmap ,n :NERDTreeTabsToggle<CR>
 nmap ,f :NERDTreeFind<CR>
+nmap ,c :NERDTreeMapChdir<CR>
 let g:NERDTreeNodeDelimiter = "\u00a0"
 let g:NERDTreeDirArrowExpandable = '▸'
 let g:NERDTreeDirArrowCollapsible = '▾'
