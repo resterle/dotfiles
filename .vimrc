@@ -15,6 +15,9 @@ Plug 'Xuyuanp/nerdtree-git-plugin'
 " Scala
 Plug 'neoclide/coc.nvim'
 
+" Elixir
+Plug 'elixir-editors/vim-elixir'
+
 " All of your Plugins must be added before the following line
 " Initialize plugin system
 call plug#end()

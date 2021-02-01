@@ -2,7 +2,10 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-  export ZSH="/home/raphael/.oh-my-zsh"
+export ZSH="/home/raphael/.oh-my-zsh"
+
+# asdf runtime management
+ASDF_DIR=$HOME/apps/asdf
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -62,7 +65,10 @@ ZSH_THEME="gnzh"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+
+# elixir plugin https://github.com/gusaiani/elixir-oh-my-zsh.git elixir
+
+plugins=(git asdf mix)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -119,6 +125,3 @@ PROMPT=$PROMPT
 
 TERMINAL=alacritty
 
-# asdf runtime management
-. $HOME/apps/asdf/asdf.sh
-. ~/.asdf/plugins/java/set-java-home.zsh
