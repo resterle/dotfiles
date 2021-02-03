@@ -1,0 +1,11 @@
+# .local/share/applications/code-ms.desktop
+[Desktop Entry]
+Type=Application
+Name=VS Code
+GenericName=Microsoft VS Code
+Comment=IDE
+#Exec=/home/raphael/apps/bin/code-ms
+Exec=sh -c "PATH=/home/raphael/.asdf/shims:$PATH;/home/raphael/apps/VSCode-linux-x64/bin/code"
+Terminal=false
+Categories=Development;IDE;
+StartupWMClass=processing-app-Base

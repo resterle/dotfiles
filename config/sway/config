@@ -103,6 +103,8 @@ input type:touchpad {
     # mouse button for dragging.
     floating_modifier $mod normal
 
+    focus_on_window_activation focus
+
     # Reload the configuration file
     bindsym $mod+Shift+c reload
 
